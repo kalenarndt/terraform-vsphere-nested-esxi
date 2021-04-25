@@ -1,0 +1,50 @@
+nested_hosts:
+  esxi1-sb:
+    name: esxi1-sb.bmrf.io
+    num_cpus: 6
+    memory: 24576
+    guest_id: vmkernel65Guest
+    nested_hv_enabled: true
+    ovf_path: /binaries/esxi/Nested_ESXi7.0u2_Appliance_Template_v1.ova
+    network: ESXi-Trunk
+    ip_address: "172.16.21.11"
+    netmask: "255.255.255.0"
+    gateway: "172.16.21.1"
+    dns: "172.16.11.2"
+    ntp: time.bmrf.io
+    domain: bmrf.io  
+    password: VMware123!
+    ssh: true
+    # size in GB
+    os_size: 8
+    vsan1_size: 50
+    vsan2_size: 150
+    disk_provisioning: thin
+
+  esxi2-sb:
+    name: esxi2-sb.bmrf.io
+    num_cpus: 6
+    memory: 24576
+    guest_id: vmkernel65Guest
+    nested_hv_enabled: true
+    ovf_path: /binaries/esxi/Nested_ESXi7.0u2_Appliance_Template_v1.ova
+    ip_address: "172.16.21.11"
+    netmask: "255.255.255.0"
+    gateway: "172.16.21.1"
+    dns: "172.16.11.2"  
+    ntp: time.bmrf.io
+    domain: bmrf.io
+    password: VMware123!
+    # size in GB
+    os_size: 8
+    vsan1_size: 50
+    vsan2_size: 150
+    disk_provisioning: thin
+
+infra_config:
+  parent_vcenter:
+    vsphere_datacenter: Black Mesa
+    vsphere_datastore: iSCSI-R5
+    vsphere_cluster_root: Compute/Resources
+    target_host: esxi2.bmrf.io
+    target_network: ESXi-Trunk
