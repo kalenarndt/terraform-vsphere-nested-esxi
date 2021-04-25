@@ -89,6 +89,7 @@ resource "vsphere_virtual_machine" "deploy" {
       "guestinfo.ipaddress" = each.value.ip_address,
       "guestinfo.netmask"   = each.value.netmask,
       "guestinfo.gateway"   = each.value.gateway,
+      "guestinfo.vlanid"    = each.value.vlanid,
       "guestinfo.dns"       = each.value.dns,
       "guestinfo.domain"    = each.value.domain,
       "guestinfo.ntp"       = each.value.ntp,
