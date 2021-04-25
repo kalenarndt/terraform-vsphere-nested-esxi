@@ -13,7 +13,7 @@ This Terraform module creates multiple nested ESXi hosts in a VMware environment
 
 ```hcl
 locals {
-  # Nested vCenter
+  # Deployment Details
   infra_deploy   = yamldecode(file("${path.module}/deploy_hosts.yaml"))
 
   # Nested Hosts
