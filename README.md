@@ -50,6 +50,7 @@ nested_hosts:
     ip_address: "172.16.21.11"
     netmask: "255.255.255.0"
     gateway: "172.16.21.1"
+    vlan: "21"
     dns: "172.16.11.2"
     ntp: time.bmrf.io
     domain: bmrf.io  
