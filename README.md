@@ -22,7 +22,7 @@ locals {
 }
 
 module "deploy_nested_hosts" {
-  source             = "github.com/kalenarndt/terraform-nested-esxi"
+  source             = "github.com/kalenarndt/terraform-vsphere-nested-esxi"
   for_each           = local.parent_infra_details
   vsphere_datacenter = each.value.vsphere_datacenter
   vsphere_datastore  = each.value.vsphere_datastore
