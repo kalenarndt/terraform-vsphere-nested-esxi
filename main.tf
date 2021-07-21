@@ -54,6 +54,14 @@ resource "vsphere_virtual_machine" "deploy" {
     network_id = data.vsphere_network.trunk.id
   }
 
+  network_interface {
+    network_id = data.vsphere_network.trunk.id
+  }
+
+  network_interface {
+    network_id = data.vsphere_network.trunk.id
+  }
+
   disk {
     label       = "os"
     unit_number = 0
@@ -80,6 +88,8 @@ resource "vsphere_virtual_machine" "deploy" {
     ovf_network_map = {
       "Trunk-1" = data.vsphere_network.trunk.id
       "Trunk-2" = data.vsphere_network.trunk.id
+      "Trunk-3" = data.vsphere_network.trunk.id
+      "Trunk-4" = data.vsphere_network.trunk.id
     }
   }
 
