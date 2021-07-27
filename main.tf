@@ -81,7 +81,8 @@ resource "vsphere_virtual_machine" "deploy" {
   }
 
   ovf_deploy {
-    local_ovf_path       = each.value.ovf_path
+    local_ovf_path       = each.value.local_ovf_path != null ? each.value.local_ovf_path : null
+    remote_ovf_url       = each.value.remote_ovf_url != null ? each.value.remote_ovf_url : null
     ip_protocol          = "IPV4"
     ip_allocation_policy = "STATIC_MANUAL"
     disk_provisioning    = each.value.disk_provisioning
