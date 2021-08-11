@@ -77,3 +77,48 @@ infra_config:
 [MIT](https://choosealicense.com/licenses/mit/)
 
   
+!-- BEGIN_TF_DOCS -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_vsphere"></a> [vsphere](#requirement\_vsphere) | >=1.25.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_vsphere"></a> [vsphere](#provider\_vsphere) | >=1.25.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [vsphere_virtual_machine.deploy](https://registry.terraform.io/providers/hashicorp/vsphere/latest/docs/resources/virtual_machine) | resource |
+| [vsphere_datacenter.dc](https://registry.terraform.io/providers/hashicorp/vsphere/latest/docs/data-sources/datacenter) | data source |
+| [vsphere_datastore.datastore](https://registry.terraform.io/providers/hashicorp/vsphere/latest/docs/data-sources/datastore) | data source |
+| [vsphere_host.target_host](https://registry.terraform.io/providers/hashicorp/vsphere/latest/docs/data-sources/host) | data source |
+| [vsphere_network.trunk](https://registry.terraform.io/providers/hashicorp/vsphere/latest/docs/data-sources/network) | data source |
+| [vsphere_resource_pool.compute_cluster](https://registry.terraform.io/providers/hashicorp/vsphere/latest/docs/data-sources/resource_pool) | data source |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_nested_host_config"></a> [nested\_host\_config](#input\_nested\_host\_config) | Configuration data to configure the required virtual machines | `map(any)` | n/a | yes |
+| <a name="input_target_host"></a> [target\_host](#input\_target\_host) | Specific host in the cluster to deploy objects to. Required by the provider for some reason | `string` | n/a | yes |
+| <a name="input_trunk_network_name"></a> [trunk\_network\_name](#input\_trunk\_network\_name) | Trunk Port Group on the VDS | `string` | n/a | yes |
+| <a name="input_vsphere_cluster"></a> [vsphere\_cluster](#input\_vsphere\_cluster) | Target cluster or resource pool where you want to deploy VMs to | `string` | n/a | yes |
+| <a name="input_vsphere_datacenter"></a> [vsphere\_datacenter](#input\_vsphere\_datacenter) | Datacenter that contains hosts, networks, and storage that you want to deploy to. | `string` | n/a | yes |
+| <a name="input_vsphere_datastore"></a> [vsphere\_datastore](#input\_vsphere\_datastore) | Target datastore to deploy VMs to | `string` | n/a | yes |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| <a name="output_nested_host_output"></a> [nested\_host\_output](#output\_nested\_host\_output) | n/a |
+<!-- END_TF_DOCS -->
