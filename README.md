@@ -40,27 +40,28 @@ Place the deploy_hosts.yaml file where your main.tf file is in your deployment o
 ```yaml
 nested_hosts:
   esxi1-sb:
-    name: esxi1-sb.bmrf.io
+    name: esxi2-sb.bmrf.io
+    username: root
     num_cpus: 6
     memory: 24576
     guest_id: vmkernel65Guest
     nested_hv_enabled: true
-    ovf_path: /binaries/esxi/Nested_ESXi7.0u2_Appliance_Template_v1.ova
-    network: ESXi-Trunk
-    ip_address: "172.16.21.11"
+    local_ovf_path: null #set to null to deploy a remote ovf
+    remote_ovf_url: https://download3.vmware.com/software/vmw-tools/nested-esxi/Nested_ESXi7.0u2_Appliance_Template_v1.ova
+    ip_address: "172.16.21.12"
     netmask: "255.255.255.0"
     gateway: "172.16.21.1"
-    vlan: "21"
-    dns: "172.16.11.2"
+    vlan: "21"    
+    dns: "172.16.11.2"  
     ntp: time.bmrf.io
-    domain: bmrf.io  
+    domain: bmrf.io
     password: VMware123!
-    ssh: true
     # size in GB
     os_size: 8
     vsan1_size: 50
     vsan2_size: 150
     disk_provisioning: thin
+    cluster: compute
 
 infra_config:
   parent_vcenter:
