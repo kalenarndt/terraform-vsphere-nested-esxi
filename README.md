@@ -78,7 +78,7 @@ infra_config:
 [MIT](https://choosealicense.com/licenses/mit/)
 
   
-!-- BEGIN_TF_DOCS -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
